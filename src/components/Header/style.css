@@ -1,0 +1,21 @@
+.header-wrapper{
+    height: 100px;
+    border: 1px solid #ffffff;
+    background-color: #282828;
+    p{
+        font-size: 24px;
+        margin: 20px;
+    }
+
+    li{
+        font-size: 20px;
+        a{
+            color: #f2f8f9;
+        }
+    }
+}
+.header-wrapper ul{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}

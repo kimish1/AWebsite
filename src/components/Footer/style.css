@@ -1,0 +1,13 @@
+.footer-wrapper{
+    height: 100px;
+    border: 1px solid #ffffff;
+    background-color: #282828;
+    p:first-child{
+        font-size: 24px;
+        margin: 20px;
+    }
+    p{
+        font-size: 18px;
+        color: #606060;
+    }
+}
