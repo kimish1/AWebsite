@@ -1,5 +1,5 @@
 import "./App.css"
-import Page from './pages/page'
+import Page from './layout/page'
 //import Content from "./components/Content/content.tsx";
 
 function App() {

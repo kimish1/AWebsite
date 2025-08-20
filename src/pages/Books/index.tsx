@@ -1,8 +1,8 @@
-import Page from '../page'
+import Page from '../../layout/page'
 import Card from "../../components/Card/Card.tsx";
 import data from '../../Fixtures/second.json'
 
-function Second() {
+function Books() {
     return (
         <div>
             <Page>
@@ -19,4 +19,4 @@ function Second() {
         </div>
     )
 }
-export default Second
+export default Books
