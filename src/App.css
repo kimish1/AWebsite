@@ -10,6 +10,10 @@
   justify-content: space-evenly;
 }
 
+.content{
+  padding: 5px;
+}
+
 /* From Uiverse.io by Yaya12085 */
 .card {
   display: flex;
@@ -24,10 +28,6 @@
 
 .cards.third .card{
   width: calc(100% / 5 - 34px);
-}
-
-.content {
-  padding: 20px;
 }
 
 .content .price {

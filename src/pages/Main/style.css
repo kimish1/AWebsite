@@ -1,3 +1,69 @@
 h2{
+    font-size: 40px;
+    padding: 75px;
+    text-align: left;
+}
+.banner{
+    width: 100%;
+
+}
+.slide-1{
+    padding: 20px;
+    font-size: 30px;
+}
+.slide-2{
+    padding: 20px;
+    font-size: 30px;
+}
+.slide-3{
+    padding: 20px;
+    font-size: 30px;
+}
+
+.card-reviews {
+    --border-radius: 0.75rem;
+    --primary-color: #139614;
+    --secondary-color: #3c3852;
+    font-family: "Arial";
+    height: 150px;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    background: #f1f1f3;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 3%);
+    position: relative;
+}
+
+.card-reviews > * + * {
+    margin-top: 1.1em;
+}
+
+.card-reviews .card__content-reviews {
+    color: var(--secondary-color);
     font-size: 25px;
+}
+
+.card-reviews .card__title-reviews {
+    padding: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.card-reviews .card__date-reviews {
+    color: #6e6b80;
+    font-size: 1.25rem;
+}
+
+.card-reviews .card__arrow-reviews {
+    position: absolute;
+}
+
+.card-reviews svg {
+    transition: 0.2s;
+}
+
+/* hover */
+.card-reviews:hover .card__title-reviews {
+    color: var(--primary-color);
+    text-decoration: underline;
 }

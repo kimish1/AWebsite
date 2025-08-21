@@ -1,5 +1,5 @@
-import type Book from "../../types"
-import type Author from "../../types"
+// @ts-ignore
+import type {Book} from "../../types/"
 
 const CardBook = (props:Book) =>{
     return (
