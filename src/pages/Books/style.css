@@ -2,6 +2,8 @@
 .checkbox-wrapper-4 * {
     box-sizing: border-box;
     color: white;
+    display: flex;
+    margin: 5px;
 }
 
 .checkbox-wrapper-4 .cbx {
@@ -58,7 +60,7 @@
 
 .checkbox-wrapper-4 .cbx span:last-child {
     line-height: 18px;
-    padding: 15px;
+    padding-left: 15px;
     font-size: 30px;
 }
 
@@ -118,4 +120,127 @@
     50% {
         transform: scale(0.9);
     }
+}
+
+/* From Uiverse.io by adarshpatel111 */
+.magic-checkbox-group {
+    display: grid;
+    gap: 24px;
+    padding: 25px;
+    border-radius: 16px;
+    width: fit-content;
+}
+
+.magic-check {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    position: relative;
+    padding-left: 65px;
+}
+
+.magic-check input {
+    position: absolute;
+    opacity: 0;
+}
+
+.liquid-box {
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    margin-left: 450px;
+    margin-bottom: 750px;
+    transition: all 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.liquid-fill {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #00dbde, #fc00ff);
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+}
+
+.magic-label {
+    color: white;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.4s;
+    margin-left: 450px;
+    position: relative;
+    top: -376px;
+    letter-spacing: 0.5px;
+}
+
+.magic-check:nth-child(2) .liquid-fill {
+    background: linear-gradient(45deg, #f6d365, #fda085);
+}
+
+.magic-check:nth-child(3) .liquid-fill {
+    background: linear-gradient(45deg, #84fab0, #8fd3f4);
+}
+
+.magic-check input:checked ~ .liquid-box {
+    transform: rotate(8deg);
+    box-shadow: 0 0 20px rgba(0, 219, 222, 0.5);
+}
+
+.magic-check:nth-child(2) input:checked ~ .liquid-box {
+    box-shadow: 0 0 20px rgba(246, 211, 101, 0.5);
+}
+
+.magic-check:nth-child(3) input:checked ~ .liquid-box {
+    box-shadow: 0 0 20px rgba(132, 250, 176, 0.5);
+}
+
+.magic-check input:checked ~ .liquid-box .liquid-fill {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    bottom: 0;
+}
+
+.magic-check input:checked ~ .liquid-box .sparkle {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.3s;
+}
+
+.magic-check input:checked ~ .magic-label {
+    transform: translateX(5px);
+    text-shadow: 0 0 15px currentColor;
+}
+
+.magic-check:hover .liquid-box {
+    transform: scale(1.05);
+}
+
+@keyframes sparkle-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+.magic-check input:checked ~ .liquid-box .sparkle {
+    animation: sparkle-pulse 1.5s infinite;
 }

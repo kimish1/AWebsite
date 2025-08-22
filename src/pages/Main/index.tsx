@@ -5,12 +5,20 @@ import "./style.css"
 import Book from "../../components/Book/Book.tsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+// @ts-ignore
 import "swiper/css";
+// @ts-ignore
 import "swiper/css/navigation";
+// @ts-ignore
 import "swiper/css/pagination";
+import {saveToLocalStorage} from "../../localstorage/localStorageHelper.ts";
 
 
 function Main() {
+    // @ts-ignore
+    localStorage.setItem(saveToLocalStorage("authors", authors))
+    // @ts-ignore
+    localStorage.setItem(saveToLocalStorage("books", books))
     return (
         <div>
             <Page>
