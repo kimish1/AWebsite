@@ -11,14 +11,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 // @ts-ignore
 import "swiper/css/pagination";
-import {saveToLocalStorage} from "../../localstorage/localStorageHelper.ts";
 
 
 function Main() {
-    // @ts-ignore
-    localStorage.setItem(saveToLocalStorage("authors", authors))
-    // @ts-ignore
-    localStorage.setItem(saveToLocalStorage("books", books))
     return (
         <div>
             <Page>
