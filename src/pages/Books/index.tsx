@@ -9,7 +9,6 @@ import Category from "../../components/Categories/Category.tsx";
 import "../../App.css"
 
 function Books() {
-
     return (
         <div>
             <Page>

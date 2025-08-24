@@ -1,41 +1,77 @@
+import { useState, useEffect } from "react";
 import Page from "../../layout/page";
-import "../../App.css"
+import { saveToLocalStorage } from "../../localstorage/localStorageHelper.ts";
+import "../../App.css";
 
-function LogIn() {
+function Login() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            setLoggedIn(true);
+        }
+    }, []);
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        // проста перевірка
+        if (email === "test@test.com" && password === "123456") {
+            saveToLocalStorage("token", "fake-jwt-token");
+            setError("");
+            setLoggedIn(true);
+        } else {
+            setError("Invalid email or password");
+        }
+    };
+
+    if (loggedIn) {
+        return (
+            <Page>
+                <h1>Ю ар олреді логед ін!</h1>
+                <h1>Ти зариганий кароч</h1>
+                <p>велком бєк ту йор акоунт.</p>
+            </Page>
+        );
+    }
 
     return (
-        <div>
-            <Page>
+        <Page>
+            <form className="form-container" onSubmit={handleSubmit}>
                 <div className="input-group">
                     <label className="label">Email</label>
-                    <input autoComplete="off" name="Email" id="Email" className="input" type="email" />
-                    <div></div>
+                    <input
+                        type="email"
+                        className="input"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
                 </div>
+
                 <div className="input-group">
                     <label className="label">Password</label>
-                    <input autoComplete="off" name="Password" id="Password" className="input" type="password" />
-                    <div></div>
+                    <input
+                        type="password"
+                        className="input"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
                 </div>
-                <button className="contactButton">
-                    Contact
-                    <div className="iconButton">
-                        <svg
-                            height="24"
-                            width="24"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M0 0h24v24H0z" fill="none"></path>
-                            <path
-                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                                fill="currentColor"
-                            ></path>
-                        </svg>
-                    </div>
+
+                {error && <p style={{ color: "red" }}>{error}</p>}
+
+                <button type="submit" className="contactButton">
+                    Log In
                 </button>
-            </Page>
-        </div>
-    )
+            </form>
+        </Page>
+    );
 }
 
-export default LogIn
+export default Login;

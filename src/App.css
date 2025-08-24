@@ -4,6 +4,10 @@
   padding: 2rem;
   text-align: center;
 }
+p{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
 .popular-books{
   display: flex;
   flex-flow: row wrap;
@@ -60,6 +64,12 @@
 }
 .card .image img {
   border-radius: 10px;
+}
+h1 {
+  font-size: 40px;
+  padding-left: 75px;
+  text-align: left;
+  margin-bottom: 5px;
 }
 
 .cards.second .card{
