@@ -5,6 +5,11 @@
     display: flex;
     margin: 5px;
 }
+.checkbox-wrapper-4 {
+    display: flex;
+    flex-flow: nowrap;
+    gap: 10px;
+}
 
 .checkbox-wrapper-4 .cbx {
     -webkit-user-select: none;
@@ -16,12 +21,6 @@
     transition: all 0.2s ease;
     display: inline-block;
 }
-.categorii {
-    display: flex;
-    flex-flow: nowrap;
-    gap: 10px;
-}
-
 .checkbox-wrapper-4 .cbx:not(:last-child) {
     margin-right: 0px;
 }

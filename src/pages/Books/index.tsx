@@ -12,20 +12,18 @@ function Books() {
     return (
         <div>
             <Page>
-                <div className="categorii">
-                    <div className="checkbox-wrapper-4">
-                        {categori.map((category) => {
-                            return (
-                                <Category
-                                    key={category.id}
-                                    id={category.id}
-                                    name={category.name}
-                                    createdAt={category.createdAt}
-                                    updatedAt={category.updatedAt}
-                                />
-                            )
-                        })}
-                    </div>
+                <div className="checkbox-wrapper-4">
+                    {categori.map((category) => {
+                        return (
+                            <Category
+                                key={category.id}
+                                id={category.id}
+                                name={category.name}
+                                createdAt={category.createdAt}
+                                updatedAt={category.updatedAt}
+                            />
+                        )
+                    })}
                 </div>
                 <div className="popular-books">
                     {books.map((book) => {
