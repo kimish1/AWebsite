@@ -16,6 +16,11 @@
     transition: all 0.2s ease;
     display: inline-block;
 }
+.categorii {
+    display: flex;
+    flex-flow: nowrap;
+    gap: 10px;
+}
 
 .checkbox-wrapper-4 .cbx:not(:last-child) {
     margin-right: 0px;
