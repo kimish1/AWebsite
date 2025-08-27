@@ -2,7 +2,15 @@ h2{
     font-size: 40px;
     padding: 75px;
     text-align: left;
+    margin-top: 500px;
 }
+.orange-square {
+    width: 1500px;
+    height: 500px;
+    background-color: #ffc581;
+    margin: auto;
+}
+
 .banner{
     width: 100%;
 
@@ -66,4 +74,8 @@ h2{
 .card-reviews:hover .card__title-reviews {
     color: var(--primary-color);
     text-decoration: underline;
+}
+.reviews{
+    width: 1000px;
+    margin: 0 auto;
 }

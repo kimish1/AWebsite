@@ -6,6 +6,7 @@ import Main from "./pages/Main";
 import Books from "./pages/Books";
 import OneBook from "./pages/Book";
 import LogIn from "./pages/LogIn";
+// @ts-ignore
 import Register from "./pages/Register";
 
 createRoot(document.getElementById('root')!).render(
@@ -13,7 +14,7 @@ createRoot(document.getElementById('root')!).render(
         <Routes>
             <Route path ="/" element={<Main/>} />
             <Route path ="/page-books" element={<Books />} />
-            <Route path ="/page-book" element={<OneBook />} />
+            <Route path ="/page-book/:id" element={<OneBook />} />
             <Route path ="/page-log-in" element={<LogIn />} />
             <Route path ="/page-register" element={<Register />} />
         </Routes>

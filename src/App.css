@@ -1,5 +1,4 @@
 #root {
-  max-width: 1750px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -8,6 +7,7 @@ p{
   font-size: 30px;
   margin-bottom: 10px;
 }
+
 .popular-books{
   display: flex;
   flex-flow: row wrap;
@@ -42,7 +42,7 @@ p{
     letter-spacing: 1px;
   }
   .content .price {
-    color: white;
+    color: #000000;
     font-weight: 800;
     font-size: 50px;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
@@ -52,6 +52,8 @@ p{
 
 .content{
   padding: 5px;
+  max-width: 1750px;
+  margin: 0 auto;
 }
 
 /* From Uiverse.io by Yaya12085 */
@@ -61,9 +63,11 @@ p{
   align-items: center;
   justify-content: space-around;
   width: calc(100% / 4 - 32px);
+  margin: 10px;
 }
 .card .image img {
   border-radius: 10px;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 h1 {
   font-size: 40px;
@@ -71,31 +75,30 @@ h1 {
   text-align: left;
   margin-bottom: 5px;
 }
-
-.cards.second .card{
-  width: calc(100% / 3 - 32px)
-}
-
-.cards.third .card{
-  width: calc(100% / 5 - 34px);
+.card .image img:hover {
+  transform: translateY(-15px);
+  box-shadow:
+          0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: rgba(124, 58, 237, 0.2);
 }
 
 .content .price {
-  color: white;
+  color: #000000;
   font-weight: 800;
   font-size: 50px;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
 }
 
 .content .author {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(40, 40, 40, 0.6);
   font-size: 18px;
 }
 
 .content .title {
   font-weight: 800;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.64);
+  color: rgba(0, 0, 0, 0.64);
   margin-top: 10px;
   font-size: 25px;
   letter-spacing: 1px;
@@ -107,7 +110,7 @@ button {
   border: 0;
   border-radius: 100px;
   background-color: #2ba8fb;
-  color: #ffffff;
+  color: #000000;
   font-weight: Bold;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;

@@ -6,7 +6,6 @@ import Book from "../../components/Book/Book.tsx";
 import "./style.css"
 // @ts-ignore
 import Category from "../../components/Categories/Category.tsx";
-import "../../App.css"
 
 function Books() {
     return (
@@ -31,6 +30,7 @@ function Books() {
                         return (
                             <Book
                                 key={book.id}
+                                id={book.id}
                                 title={book.title}
                                 price={book.price}
                                 img={book.image}

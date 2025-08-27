@@ -32,7 +32,7 @@ function OneBook() {
                         const author = authors.find((author) => author.id === book.authorId);
                         return (
                             <Book
-                                key={book.id}
+                                id={book.id}
                                 title={book.title}
                                 price={book.price}
                                 img="https://placehold.co/430x640"
