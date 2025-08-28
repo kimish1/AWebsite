@@ -1,14 +1,35 @@
 h2{
-    font-size: 40px;
+    font-size: 45px;
     padding: 75px;
     text-align: left;
-    margin-top: 500px;
+    position: relative;
+    z-index: 5;
+    font-family: "Segoe UI Black", Helvetica, sans-serif;
+}
+h1{
+    font-size: 50px;
+    font-family: "Segoe UI Black", Helvetica, sans-serif;
+}
+.main-title{
+    position: relative;
+    z-index: 5;
+    margin-top: -400px;
+    margin-left: 375px;
+    margin-bottom: 250px;
 }
 .orange-square {
-    width: 1500px;
-    height: 500px;
+    width: 5000px;
+    height: 725px;
     background-color: #ffc581;
-    margin: auto;
+    margin-left: -3750px;
+    margin-top: -100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: #bebebe;
+    z-index: 1;
+
 }
 
 .banner{

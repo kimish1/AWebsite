@@ -24,7 +24,7 @@ function Books() {
                         )
                     })}
                 </div>
-                <div className="popular-books">
+                <div className="popular-books1">
                     {books.map((book) => {
                         const author = authors.find((author) => author.id === book.authorId);
                         return (

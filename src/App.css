@@ -3,6 +3,18 @@
   padding: 2rem;
   text-align: center;
 }
+.popular-books1{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.firstimg{
+  position: relative;
+  z-index: 10;
+  margin-top: -1000px;
+  margin-bottom: 10px;
+  margin-right: -750px;
+}
 p{
   font-size: 30px;
   margin-bottom: 10px;
@@ -31,20 +43,29 @@ p{
   }
   .content{
     padding: 5px;
-    margin-bottom: 250px;
+    margin-right: -1400px;
+
   }
   .content .title {
     font-weight: 800;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.64);
-    margin-top: 10px;
-    font-size: 100px;
+    color: #000000;
+    margin-top: -500px;
+    margin-bottom: 20px;;
+    font-size: 80px;
+    letter-spacing: 1px;
+  }
+  .content .author {
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000000;
+    font-size: 15px;
     letter-spacing: 1px;
   }
   .content .price {
     color: #000000;
     font-weight: 800;
-    font-size: 50px;
+    font-size: 65px;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
     margin-top: 20px;
   }
@@ -75,19 +96,18 @@ h1 {
   text-align: left;
   margin-bottom: 5px;
 }
+.content .price {
+  color: #000000;
+  font-weight: 800;
+  font-size: 35px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
+}
 .card .image img:hover {
   transform: translateY(-15px);
   box-shadow:
           0 20px 25px -5px rgba(0, 0, 0, 0.1),
           0 10px 10px -5px rgba(0, 0, 0, 0.04);
   border-color: rgba(124, 58, 237, 0.2);
-}
-
-.content .price {
-  color: #000000;
-  font-weight: 800;
-  font-size: 50px;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
 }
 
 .content .author {
@@ -102,6 +122,7 @@ h1 {
   margin-top: 10px;
   font-size: 25px;
   letter-spacing: 1px;
+  font-family: "Segoe UI Black", Helvetica, sans-serif;
 }
 
 /* From Uiverse.io by suda-code */
@@ -115,8 +136,8 @@ button {
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   position: relative;
-  top: -300px;
-  right: -288.5px;
+  top: -285px;
+  right: -410px;
 }
 button:hover {
   background-color: #6fc5ff;
@@ -136,7 +157,7 @@ button:active {
 .input {
   max-width: 190px;
   height: 44px;
-  background-color: #2c2c2c;
+  background-color: #e3e2e2;
   border-radius: .5rem;
   padding: 0 1rem;
   border: 2px solid transparent;
@@ -149,17 +170,17 @@ button:active {
   margin-bottom: .3rem;
   font-size: 27.5px;
   font-weight: bold;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.6);
   transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
 }
 
 .input:hover, .input:focus, .input-group:hover .input {
   outline: none;
-  border-color: #ffffff;
+  border-color: #505050;
 }
 
 .input-group:hover .label, .input:focus {
-  color: rgba(255, 255, 255, 0.76);
+  color: rgba(0, 0, 0, 0.76);
 }
 /* From Uiverse.io by d4niz */
 .contactButton {

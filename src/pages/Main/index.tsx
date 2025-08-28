@@ -18,6 +18,13 @@ function Main() {
         <div>
             <Page>
                 <div className="orange-square"/>
+                <div className="main-title">
+                    <h1>Find your next great</h1>
+                    <h1>read at our online</h1>
+                    <h1>book store</h1>
+                </div>
+                <img className="firstimg" src="https://placehold.co/450x600"/>
+
                 <h2>Popular books</h2>
                 <div className='popular-books'>
                     {books.slice(0,8).map((book) => {
@@ -73,7 +80,7 @@ function Main() {
                                     <div className="card-reviews">
                                         <h3 className="card__title-reviews">Діана Булочка
                                         </h3>
-                                        <p className="card__content-reviews">Я цінитель книжок, тому я не буду куплть у вас, бо у вас странний сайтік</p>
+                                        <p className="card__content-reviews">Я цінитель книжок, тому я не буду куплять у вас, бо у вас странний сайтік</p>
                                         <div className="card__date-reviews">
                                             December 31, 2001
                                         </div>
