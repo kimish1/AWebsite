@@ -10,7 +10,7 @@ function Login() {
     const [loggedIn, setLoggedIn] = useState(false);
 
     useEffect(() => {
-        const token = localStorage.getItem("token");
+        const token = localStorage.getItem("1token");
         if (token) {
             setLoggedIn(true);
         }
@@ -66,9 +66,15 @@ function Login() {
 
                 {error && <p style={{ color: "red" }}>{error}</p>}
 
-                <button type="submit" className="contactButton">
-                    Log In
-                </button>
+                <div className="center">
+                    <button type="submit">
+                        Log in
+                        <div className="arrow-wrapper">
+                            <div className="arrow"></div>
+
+                        </div>
+                    </button>
+                </div>
             </form>
         </Page>
     );

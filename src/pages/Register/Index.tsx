@@ -83,10 +83,15 @@ function Register() {
 
                 {error && <p style={{ color: "red" }}>{error}</p>}
                 {success && <p style={{ color: "green" }}>{success}</p>}
+                <div className="center">
+                    <button type="submit">
+                        Register
+                        <div className="arrow-wrapper">
+                            <div className="arrow"></div>
 
-                <button type="submit" className="contactButton">
-                    Register
-                </button>
+                        </div>
+                    </button>
+                </div>
             </form>
         </Page>
     );

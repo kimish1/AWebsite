@@ -46,13 +46,23 @@ function OneBook() {
                             title={book.title}
                             price={book.price}
                             img={"https://placehold.co/430x640"}
+                            // @ts-ignore
                             author={author?.name}
+                            showButton={false}
                         />
-                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">
-                            <button>Add to cart</button>
-                        </a>
                     </div>
                 )}
+                <div className="one-book-button">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                        <button>
+                            Add to cart
+                            <div className="arrow-wrapper">
+                                <div className="arrow"></div>
+                            </div>
+                        </button>
+                    </a>
+
+                </div>
                 <div className="popular-books">
                     {books.slice(0,4).map((book) => {
                         const author = authors.find((author) => author.id === book.authorId);
@@ -62,7 +72,9 @@ function OneBook() {
                                 title={book.title}
                                 price={book.price}
                                 img={book.image}
+                                // @ts-ignore
                                 author={author?.name}
+                                showButton={book.image !== "https://placehold.co/430x640"}
                             />
                         )
                     })}

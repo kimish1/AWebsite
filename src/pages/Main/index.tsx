@@ -38,7 +38,9 @@ function Main() {
                                 price={book.price}
                                 img={book.image}
                                 author={author?.name}
-                            />)})}
+                                showButton={false}
+                            />
+                        )})}
                 </div>
                 <div className="reviews">
                     <div className="w-[600px] mx-auto mt-10">
