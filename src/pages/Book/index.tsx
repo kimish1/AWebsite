@@ -26,19 +26,6 @@ function OneBook() {
     return (
         <div>
             <Page>
-                <div className="checkbox-wrapper-4">
-                    {categori.map((category) => {
-                        return (
-                            <Category
-                                key={category.id}
-                                id={category.id}
-                                name={category.name}
-                                createdAt={category.createdAt}
-                                updatedAt={category.updatedAt}
-                            />
-                        )
-                    })}
-                </div>
                 {book && (
                     <div className="popular-book">
                         <Book
@@ -53,7 +40,7 @@ function OneBook() {
                     </div>
                 )}
                 <div className="one-book-button">
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
                         <button>
                             Add to cart
                             <div className="arrow-wrapper">

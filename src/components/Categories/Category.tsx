@@ -1,9 +1,10 @@
 import type {Category} from "../../types/types.tsx"
 
 const Category = (props:Category) =>{
+    // @ts-ignore
     return (
         <div className="checkbox-wrapper-4">
-            <input className="inp-cbx" id={props.name} type="checkbox"/>
+            <input className="inp-cbx" id={props.name} value={props.id} type="checkbox" onChange={props.onChange}/>
             <label className="cbx" htmlFor={props.name}><span>
                             <svg width="12px" height="10px">
 
