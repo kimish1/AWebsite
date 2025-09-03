@@ -29,7 +29,25 @@ h1{
     position: relative;
     border: #bebebe;
     z-index: 1;
-
+}
+.orange-rectangle{
+    width: 10000px;
+    height: 100px;
+    background-color: #ffc581;
+    margin-left: -3750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: #bebebe;
+    z-index: 1;
+}
+.buyersfeedback{
+    position: relative;
+    z-index: 5;
+    margin-top: -75px;
+    margin-left: 625px;
+    margin-bottom: 40px;
 }
 
 .banner{
@@ -45,6 +63,18 @@ h1{
     font-size: 30px;
 }
 .slide-3{
+    padding: 20px;
+    font-size: 30px;
+}
+.slide-4{
+    padding: 20px;
+    font-size: 30px;
+}
+.slide-5{
+    padding: 20px;
+    font-size: 30px;
+}
+.slide-6{
     padding: 20px;
     font-size: 30px;
 }
@@ -97,6 +127,6 @@ h1{
     text-decoration: underline;
 }
 .reviews{
-    width: 1000px;
+    width: 100%;
     margin: 0 auto;
 }

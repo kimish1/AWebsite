@@ -44,7 +44,6 @@ p{
   .content{
     padding: 5px;
     margin-right: -1400px;
-
   }
   .content .title {
     font-weight: 800;
@@ -158,14 +157,14 @@ h1 {
 
 /* From Uiverse.io by satyamchaudharydev */
 button {
-  --primary-color: #645bff;
+  --primary-color: #d95308;
   --secondary-color: #fff;
   --hover-color: #111;
   --arrow-width: 10px;
   --arrow-stroke: 2px;
   box-sizing: border-box;
   border: 0;
-  border-radius: 20px;
+  border-radius: 5px;
   color: var(--secondary-color);
   padding: 1em 1.8em;
   background: var(--primary-color);
