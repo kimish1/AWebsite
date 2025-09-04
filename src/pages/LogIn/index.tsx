@@ -1,27 +1,35 @@
 import { useState, useEffect } from "react";
 import Page from "../../layout/page";
-import { saveToLocalStorage } from "../../localstorage/localStorageHelper.ts";
 import "../../App.css";
+import "./style.css"
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [loggedIn, setLoggedIn] = useState(false);
+    const [userName, setUserName] = useState("");
 
     useEffect(() => {
-        const token = localStorage.getItem("1token");
-        if (token) {
+        const token = localStorage.getItem("token");
+        const currentUser = localStorage.getItem("currentUser");
+
+        if (token && currentUser) {
             setLoggedIn(true);
+            setUserName(currentUser);
         }
     }, []);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        // проста перевірка
-        if (email === "test@test.com" && password === "123456") {
-            saveToLocalStorage("token", "fake-jwt-token");
+        const users = JSON.parse(localStorage.getItem("users") || "[]");
+        const user = users.find((u: any) => u.email === email && u.password === password);
+
+        if (user) {
+            localStorage.setItem("token", "fake-jwt-token");
+            localStorage.setItem("currentUser", user.name);
+            setUserName(user.name);
             setError("");
             setLoggedIn(true);
         } else {
@@ -32,9 +40,9 @@ function Login() {
     if (loggedIn) {
         return (
             <Page>
-                <h1>You arleady loged in!</h1>
-                <h1>Ти зареганий кароч.
-                    <h2>велком бєк ту йор акоунт.</h2></h1>
+                <div className="complete-register">
+                    <h1>{userName}, ти зарегався 🎉</h1>
+                </div>
             </Page>
         );
     }
@@ -71,7 +79,6 @@ function Login() {
                         Log in
                         <div className="arrow-wrapper">
                             <div className="arrow"></div>
-
                         </div>
                     </button>
                 </div>

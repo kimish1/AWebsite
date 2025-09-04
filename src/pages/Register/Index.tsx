@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Page from "../../layout/page";
-import { saveToLocalStorage } from "../../localstorage/localStorageHelper.ts";
 import "../../App.css";
 
 function Register() {
@@ -26,9 +25,24 @@ function Register() {
             setError("Passwords do not match");
             return;
         }
-        saveToLocalStorage("token", "fake-jwt-token");
+
+        const users = JSON.parse(localStorage.getItem("users") || "[]");
+
+        if (users.find((u: any) => u.email === email)) {
+            setError("User already exists with this email");
+            return;
+        }
+
+        const newUser = { name, email, password };
+        users.push(newUser);
+
+        localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem("token", "fake-jwt-token");
+        localStorage.setItem("currentUser", name);
+
         setError("");
-        setSuccess(`User ${name} successfully registered! You are now logged in.`);
+        setSuccess(`User ${name} successfully registered! Redirecting...`);
+
         setTimeout(() => {
             window.location.href = "/page-log-in";
         }, 2000);
@@ -88,7 +102,6 @@ function Register() {
                         Register
                         <div className="arrow-wrapper">
                             <div className="arrow"></div>
-
                         </div>
                     </button>
                 </div>

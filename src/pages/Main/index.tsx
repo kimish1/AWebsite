@@ -88,7 +88,7 @@ function Main() {
                                         </h3>
                                         <p className="card__content-reviews">Я цінитель книжок, тому я не буду куплять у вас, бо у вас странний сайтік😡</p>
                                         <div className="card__date-reviews">
-                                            December 31, 2001
+                                            December 31, 1999
                                         </div>
                                     </div>
                                 </div>
@@ -122,9 +122,9 @@ function Main() {
                                     <div className="card-reviews">
                                         <h3 className="card__title-reviews">Ігоrrr
                                         </h3>
-                                        <p className="card__content-reviews">Я поважаю цы книги, але якийсь малий асортимент😏</p>
+                                        <p className="card__content-reviews">Я люблю читати книги, але у вас якийсь малий асортимент😏</p>
                                         <div className="card__date-reviews">
-                                            May 10, 2000
+                                            May 04, 2011
                                         </div>
                                     </div>
                                 </div>
