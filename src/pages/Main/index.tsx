@@ -14,7 +14,11 @@ import "swiper/css/pagination";
 
 
 function Main() {
+    const otherBooks = books.filter((b) => b.id !== Book);
+    const shuffled = [...otherBooks].sort(() => Math.random() - 0.5);
+    const randomBooks = shuffled.slice(0, 4);
     return (
+
         <div>
             <Page>
                 <div className="orange-square"/>
@@ -27,9 +31,10 @@ function Main() {
 
                 <h2>Popular books</h2>
                 <div className='popular-books'>
-                    {books.slice(0,8).map((book) => {
+                    {randomBooks.map((book) => {
                         const author = authors.find((author) => author.id === book.authorId);
 
+                        // @ts-ignore
                         return (
                             <Book
                                 key={book.id}
