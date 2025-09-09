@@ -14,6 +14,7 @@ import "swiper/css/pagination";
 
 
 function Main() {
+    // @ts-ignore
     const otherBooks = books.filter((b) => b.id !== Book);
     const shuffled = [...otherBooks].sort(() => Math.random() - 0.5);
     const randomBooks = shuffled.slice(0, 4);
