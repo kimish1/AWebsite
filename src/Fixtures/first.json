@@ -1,0 +1,10 @@
+[
+  { "id": 1, "title": "Web Development", "list": ["HTML", "CSS", "JavaScript"], "buttonName": "Learn More" },
+  { "id": 2, "title": "Data Science", "list": ["Python", "Pandas", "NumPy"], "buttonName": "Enroll" },
+  { "id": 3, "title": "UI/UX Design", "list": ["Figma", "Prototyping", "User Research"], "buttonName": "Get Started" },
+  { "id": 4, "title": "Mobile Apps", "list": ["React Native", "Flutter", "Kotlin"], "buttonName": "View Details" },
+  { "id": 5, "title": "Cloud Computing", "list": ["AWS", "Azure", "GCP"], "buttonName": "Join Now" },
+  { "id": 6, "title": "Cybersecurity", "list": ["Networking", "Encryption", "Ethical Hacking"], "buttonName": "Learn More" },
+  { "id": 7, "title": "Game Development", "list": ["Unity", "Unreal", "C#"], "buttonName": "Start Course" },
+  { "id": 8, "title": "AI & ML", "list": ["TensorFlow", "PyTorch", "NLP"], "buttonName": "Sign Up" }
+]

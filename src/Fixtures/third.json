@@ -1,0 +1,10 @@
+[
+  { "id": 1, "title": "Basic Plan", "price": 9.99, "description": "Access to basic features", "buttonName": "Subscribe" },
+  { "id": 2, "title": "Standard Plan", "price": 19.99, "description": "Includes basic + premium tools", "buttonName": "Subscribe" },
+  { "id": 3, "title": "Pro Plan", "price": 29.99, "description": "All features unlocked", "buttonName": "Subscribe" },
+  { "id": 4, "title": "Team Plan", "price": 49.99, "description": "For small teams", "buttonName": "Get Started" },
+  { "id": 5, "title": "Enterprise Plan", "price": 99.99, "description": "Full features for enterprises", "buttonName": "Contact Us" },
+  { "id": 6, "title": "Student Plan", "price": 5.99, "description": "Special offer for students", "buttonName": "Enroll" },
+  { "id": 7, "title": "Annual Plan", "price": 199.99, "description": "Pay once, use all year", "buttonName": "Buy Now" },
+  { "id": 8, "title": "Trial Plan", "price": 0, "description": "7-day free trial", "buttonName": "Start Trial" }
+]

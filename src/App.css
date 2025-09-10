@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Marck+Script&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  text-align: center;
+}
+
+.container {
+  width: 1280px;
+  padding: 0 15px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.popular-books1{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+p{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.popular-books{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.card a {
+    text-decoration: none;
+  }
+
+.content{
+  font-family: "Inter", "Segoe UI Black", Helvetica, sans-serif;
+}
+
+/* From Uiverse.io by Yaya12085 */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: calc(100% / 4 - 32px);
+  margin: 10px;
+  text-align: center;
+}
+.card .image img {
+  border-radius: 10px;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+h1 {
+  font-size: 40px;
+  text-align: left;
+  margin-bottom: 5px;
+}
+.content .price {
+  color: #000000;
+  font-weight: 800;
+  font-size: 35px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
+}
+.card .image img:hover {
+  transform: translateY(-15px);
+  box-shadow:
+          0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+.content .author {
+  color: rgba(40, 40, 40, 0.6);
+  font-size: 18px;
+}
+
+.content .title {
+  font-weight: 800;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.64);
+  margin-top: 10px;
+  font-size: 25px;
+  width: 150%;
+  letter-spacing: 1px;
+  font-family: "Segoe UI Black", Helvetica, sans-serif;
+}
+
+
+/* From Uiverse.io by alexruix */
+.input {
+  max-width: 190px;
+  height: 44px;
+  background-color: #e3e2e2;
+  border-radius: .5rem;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
+.label {
+  display: block;
+  margin-bottom: .3rem;
+  font-family: "Segoe UI Black", Helvetica, sans-serif;
+  font-size: 27.5px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.6);
+  transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
+.input:hover, .input:focus, .input-group:hover .input {
+  outline: none;
+  border-color: #505050;
+}
+
+.input-group:hover .label, .input:focus {
+  color: rgba(0, 0, 0, 0.76);
+}
+
+/* From Uiverse.io by satyamchaudharydev */
+button {
+  --primary-color: #d95308;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 5px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  cursor: pointer;
+  font-weight: bold;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.one-book-button{
+  margin-left: 1215px;
+  margin-top: -250px;
+  margin-bottom: 250px;
+}
+.content .title,
+.content .author,
+.content .price {
+  text-align: center;
+  margin: 5px 0;
+  width: 150%;
+}
+
+button .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+button .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+button:hover .arrow {
+  background: var(--secondary-color);
+}
+
+button:hover .arrow:before {
+  right: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+
+.book-item {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 30px;
+  flex-flow: row wrap;
+  margin-top: 30px;
+}
+
+.book__left,
+.book__right {
+  width: calc(50% - 15px)
+}
+
+.book__left {
+  display: flex;
+  justify-content: center;
+  img{
+    border-radius: 10px;
+  }
+}
+
+
+.book__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 100px;
+  p{
+    margin: 0 0 25px;
+  }
+}
+
+
+.book__bottom {
+  flex: 1;
+  padding: 10px 0 0 90px;
+  font-size: 24px;
+}
+
+.book__title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.book__author,
+.book__description,
+.book__price {
+  text-align: left;
+  margin-bottom: 12px;
+  font-size: 24px;
+  padding-left: 20px;
+}
+
+.book_add_to_cart {
+  display: flex;
+  width: max-content;
+  text-decoration: none;
+  line-height: 45px;
+  padding: 0 20px;
+  font-weight: bold;
+}

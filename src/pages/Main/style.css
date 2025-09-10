@@ -1,0 +1,152 @@
+h2{
+    font-size: 35px;
+    text-align: left;
+    position: relative;
+    margin: 25px;
+    z-index: 5;
+    font-family: "Segoe UI Black", Helvetica, sans-serif;
+}
+h1{
+    font-size: 50px;
+    font-family: "Inter", "Segoe UI Black", Helvetica, sans-serif;
+}
+.main-title{
+    position: relative;
+    z-index: 5;
+    padding-top: 127px;
+}
+
+.main-title h1{
+    font-size: 58px;
+    font-weight: 700;
+    padding: 0 100px;
+}
+
+
+.orange-square {
+    width: calc(100vw - 17px);
+    left: 50%;
+    transform: translateX(-50%);
+    height: 45vh;
+    min-height: 500px;
+    position: relative;
+}
+
+.orange-square:before {
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    background-color: #ffc581;
+    bottom: 0;
+    width: 70%;
+}
+.firstimg{
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateX(20%);
+}
+.orange-rectangle{
+    width: 100%;
+    background-color: #ffc581;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: #bebebe;
+    z-index: 1;
+    margin: 60px 0 25px;
+    padding: 20px 0;
+    border-radius: 10px;
+
+}
+.buyersfeedback{
+}
+.buyersfeedback p {
+    font-weight: 600;
+    font-size: 60px;
+}
+.banner{
+    width: 100%;
+}
+.slide-1{
+    padding: 20px;
+    font-size: 30px;
+}
+.slide-2{
+    padding: 20px;
+    font-size: 30px;
+}
+.slide-3{
+    padding: 20px;
+    font-size: 30px;
+}
+.slide-4{
+    padding: 20px;
+    font-size: 30px;
+}
+.slide-5{
+    padding: 20px;
+    font-size: 30px;
+}
+.slide-6{
+    padding: 20px;
+    font-size: 30px;
+}
+
+.card-reviews {
+    --border-radius: 0.75rem;
+    --primary-color: #000000;
+    --secondary-color: #3c3852;
+    font-family: "Arial";
+    min-height: 200px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    background: #f1f1f3;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 3%);
+    position: relative;
+}
+
+.card-reviews > * + * {
+    margin-top: 1.1em;
+}
+
+.card-reviews .card__content-reviews {
+    color: var(--secondary-color);
+    font-size: 25px;
+}
+
+.card-reviews .card__title-reviews {
+    padding: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.card-reviews .card__date-reviews {
+    color: #6e6b80;
+    font-size: 1.25rem;
+}
+
+.card-reviews .card__arrow-reviews {
+    position: absolute;
+}
+
+.card-reviews svg {
+    transition: 0.2s;
+}
+
+/* hover */
+.card-reviews:hover .card__title-reviews {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+.reviews{
+    width: 125%;
+    justify-content: center;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
