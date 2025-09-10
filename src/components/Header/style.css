@@ -1,0 +1,33 @@
+.header-wrapper {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #181818;
+    z-index: 10;
+    img{
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 100%;
+    }
+    li{
+        font-size: 20px;
+        line-height: 100px;
+        a{
+            color: #000000;
+        }
+    }
+}
+
+
+.header-wrapper ul{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 100px;
+    margin: 0 auto;
+    list-style: none;
+}
