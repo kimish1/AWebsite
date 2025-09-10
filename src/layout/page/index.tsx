@@ -1,21 +1,21 @@
-import Header from "../../components/Header/Header.tsx";
-import Footer from "../../components/Footer/Footer.tsx";
+import Header from '../../components/Header/Header.tsx';
+import Footer from '../../components/Footer/Footer.tsx';
 //import Content from "../../components/Content/content.tsx";
-import "./style.css"
+import './style.css';
 
 type PageType = {
-    children: React.ReactNode
-}
+    children: React.ReactNode;
+};
 
-const Page = (props:PageType) =>{
+const Page = (props: PageType) => {
     return (
         <div className="wrapper">
             <Header />
-            <div className='content'>
-                {props.children}
+            <div className="container">
+                <div className="content">{props.children}</div>
             </div>
             <Footer />
         </div>
-    )
-}
-export default Page
+    );
+};
+export default Page;

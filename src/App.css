@@ -7,14 +7,8 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-}
-.firstimg{
-  position: relative;
-  z-index: 10;
-  margin-top: -625px;
-  top: -25px;
-  margin-bottom: 10px;
-  margin-right: -750px;
+  margin: 0 auto;
+  max-width: 1280px;
 }
 p{
   font-size: 30px;
@@ -25,6 +19,8 @@ p{
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
+  margin: 0 auto;
+  max-width: 1280px;
 }
 .popular-book{
 /*margin-left: 350px;*/
@@ -73,7 +69,6 @@ p{
 
 .content{
   padding: 5px;
-  max-width: 1750px;
   margin: 0 auto;
   font-family: "Segoe UI Black", Helvetica, sans-serif;
 }
@@ -116,6 +111,7 @@ h1 {
   font-size: 18px;
 }
 
+
 .content .title {
   font-weight: 800;
   text-transform: uppercase;
@@ -157,7 +153,6 @@ h1 {
 .input-group:hover .label, .input:focus {
   color: rgba(0, 0, 0, 0.76);
 }
-
 /* From Uiverse.io by satyamchaudharydev */
 button {
   --primary-color: #d95308;
