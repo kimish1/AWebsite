@@ -33,10 +33,12 @@ function OneBook() {
                             <img src="https://placehold.co/430x640" alt={ book.title } />
                         </div>
                         <div className="book__right">
-                            <h1 className="book__title">{ book.title }</h1>
+                            <h1 className="book__title">📚{ book.title }</h1>
                             <p className="book__author">{ author?.name }</p>
                             <p className="book__description">{ book.shortDescription }</p>
+                            <p className="book__created">{ book.createdAt }</p>
                             <p className="book__price">Price: { book.price }$</p>
+                            <p className="book__status">Status - { book.status }</p>
 
                             <a className='book_add_to_cart' href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
                                 <button>

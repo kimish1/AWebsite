@@ -19,13 +19,10 @@ const CardBook = (props: CardBookProps) => {
                     <div className="author">{props.author}</div>
                     <div className="price">${props.price}</div>
                 </div>
-                {props.showButton !== false && ( 
+                {props.showButton !== false && (
                     <div className="center">
                         <button type="submit">
                             Add to cart
-                            <div className="arrow-wrapper">
-                                <div className="arrow"></div>
-                            </div>
                         </button>
                     </div>
                 )}

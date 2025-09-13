@@ -38,6 +38,9 @@ function Login() {
     };
 
     if (loggedIn) {
+        setTimeout(() => {
+            window.location.href = "/";
+        }, 1000);
         return (
             <Page>
                 <div className="complete-register">

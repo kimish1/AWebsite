@@ -24,7 +24,7 @@ h1{
 
 
 .orange-square {
-    width: calc(100vw - 17px);
+    width: calc(100vw - 15px);
     left: 50%;
     transform: translateX(-50%);
     height: 45vh;
@@ -45,7 +45,7 @@ h1{
   position: absolute;
   right: 0;
   top: 0;
-  transform: translateX(20%);
+  transform: translateX(15%);
 }
 .orange-rectangle{
     width: 100%;

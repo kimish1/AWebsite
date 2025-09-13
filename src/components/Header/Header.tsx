@@ -29,30 +29,42 @@ const Header = () => {
             <div>
                 <ul>
                     <a href="/">
-                        <img src="https://placehold.co/100x100" alt="Logo"/>
+                        <img className="first-img" src="https://placehold.co/100x100" alt="Logo"/>
                     </a>
-                    <li><a href="/">Home page</a></li>
-                    <li><a href="/page-books">Books page</a></li>
+                    <li><a href="/">Home page🏠</a></li>
+                    <li><a href="/page-books">Books page📚</a></li>
+                    <li className="cart-img">
+                        <a href="/page-cart">
+                            Cart🧺
+                        </a>
 
-                    {loggedIn ? (
-                        <>
-                            <li><span>Welcome, {userName} 🎉</span></li>
-                            <li>
-                                <div className="logout_button">
-                                    <button onClick={handleLogout} className="logout-btn">
+                    </li>
+                        {loggedIn ? (
+                            <>
+                                <li><span>Welcome, {userName} 🎉</span></li>
+                                <li><a href="#" onClick={handleLogout}>
+                                    <button className="button1">
                                         Log out<div className="arrow-wrapper">
                                         <div className="arrow"></div>
                                     </div>
                                     </button>
-                                </div>
-                            </li>
-                        </>
-                    ) : (
-                        <>
-                            <li><a href="/page-log-in">Log in</a></li>
-                            <li><a href="/page-register">Register</a></li>
-                        </>
-                    )}
+                                </a></li>
+                                {/*<li>*/}
+                                {/*    <div className="logout_button">*/}
+                                {/*        <button onClick={handleLogout} className="logout-btn">*/}
+                                {/*            Log out<div className="arrow-wrapper">*/}
+                                {/*            <div className="arrow"></div>*/}
+                                {/*        </div>*/}
+                                {/*        </button>*/}
+                                {/*    </div>*/}
+                                {/*</li>*/}
+                            </>
+                        ) : (
+                            <>
+                                <li><a href="/page-log-in">Log in</a></li>
+                                <li><a href="/page-register">Register</a></li>
+                            </>
+                        )}
                 </ul>
             </div>
         </div>

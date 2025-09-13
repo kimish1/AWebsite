@@ -266,7 +266,9 @@ button:hover .arrow:before {
 
 .book__author,
 .book__description,
-.book__price {
+.book__price,
+.book__created,
+.book__status{
   text-align: left;
   margin-bottom: 12px;
   font-size: 24px;
