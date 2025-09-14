@@ -9,13 +9,21 @@ type PageType = {
 
 const Page = (props: PageType) => {
   return (
-    <div className="wrapper">
-      <Header />
-      <div className="container">
-        <div className="content">{props.children}</div>
+      <div className="wrapper">
+          <Header/>
+          <div className="background">
+              <video className="ggg" src="../../../public/background.mp4" autoPlay loop muted></video>
+              <div className="sloy"></div>
+          </div>
+          <div className="background1">
+              <video className="ggg1" src="../../../public/background.mp4" autoPlay loop muted></video>
+              <div className="sloy1"></div>
+          </div>
+          <div className="container">
+              <div className="content">{props.children}</div>
+          </div>
+          <Footer/>
       </div>
-      <Footer />
-    </div>
   );
 };
 export default Page;
