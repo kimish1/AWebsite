@@ -11,7 +11,7 @@ import {useState} from "react";
 function Books() {
     const [filterCategories, setFilterCategories] = useState<number[]>([]);
 
-    let data = [];
+    let data: any[] = [];
     const handleChange = (checked:boolean, category_id:number) => {
         setFilterCategories((prev) => {
             if (checked) {

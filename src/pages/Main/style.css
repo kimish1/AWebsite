@@ -35,7 +35,7 @@ h1{
 .orange-square:before {
     content: '';
     position: absolute;
-    top:0;
+    top:-5px;
     left: 0;
     background-color: #ffc581;
     bottom: 0;

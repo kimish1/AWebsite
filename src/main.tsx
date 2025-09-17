@@ -8,8 +8,6 @@ import OneBook from "./pages/Book";
 import LogIn from "./pages/LogIn";
 // @ts-ignore
 import Register from "./pages/Register";
-import Cart from "./pages/Cart";
-
 createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
         <Routes>
@@ -18,7 +16,6 @@ createRoot(document.getElementById('root')!).render(
             <Route path ="/page-book/:id" element={<OneBook />} />
             <Route path ="/page-log-in" element={<LogIn />} />
             <Route path ="/page-register" element={<Register />} />
-            <Route path ="/page-cart" element={<Cart />} />
         </Routes>
     </BrowserRouter>,
 )

@@ -1,4 +1,4 @@
-import type {Author, Book, Category} from "../types/types.tsx";
+import type {Book, Category} from "../types/types.tsx";
 
 export function saveToLocalStorage(key: string, value: any): void {
   try {
@@ -7,7 +7,7 @@ export function saveToLocalStorage(key: string, value: any): void {
     console.error("Error saving to localStorage", error);
   }
 }
-function getFromLocalStorage<T>(key: string):T | null 
+export function getFromLocalStorage<T>(key: string):T | null
 {
   try {
     const value = localStorage.getItem(key);
@@ -36,3 +36,4 @@ export function getBooks(): Book[] | null
 {
   return getFromLocalStorage<Book[]>("books")
 }
+

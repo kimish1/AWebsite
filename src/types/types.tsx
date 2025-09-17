@@ -3,7 +3,7 @@ export type User = {
     name: string;
     email: string;
     password: string;
-    comments: Comment[]//масив id коментів
+    comments: Comment[]
 }
 
 export type Category = {
@@ -12,6 +12,19 @@ export type Category = {
     createdAt: string;
     updatedAt: string;
     onChange: Function;
+}
+
+export type Booking = {
+    id: number;
+    userId: number;
+    booksId: ProductInCart[];
+    bookingDate: string;
+    totalPrice: number;
+}
+
+export type ProductInCart = {
+    bookId: number;
+    quantity: number;
 }
 
 
