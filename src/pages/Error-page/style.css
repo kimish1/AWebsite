@@ -14,6 +14,7 @@
 .CatAndBananaVideo{
     height: 400px;
     padding: 10px;
+    border-radius: 25%;
 }
 .p-error{
     font-family: "Nunito", sans-serif;
