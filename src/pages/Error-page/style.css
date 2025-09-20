@@ -1,0 +1,23 @@
+.h1-error{
+    text-decoration: none;
+    font-family: "Nunito", sans-serif;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    font-size: 100px;
+}
+.a-error{
+    font-size: 25px;
+    font-family: "Segoe UI Black", sans-serif;
+}
+.CatAndBananaVideo{
+    height: 400px;
+    padding: 10px;
+}
+.p-error{
+    font-family: "Nunito", sans-serif;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+}

@@ -30,11 +30,9 @@ const Header = () => {
         <div className="header-wrapper">
             <div className="header-left">
                 <a href="/">
-                    <img
-                        className="first-img"
-                        src="https://placehold.co/100x100"
-                        alt="Logo"
-                    />
+                    <div className="CatAndBanana-onlogo">
+                        <video className="CatAndBananaVideo-onlogo" src="../../../public/CatAndBanana.mp4" autoPlay loop muted></video>
+                    </div>
                 </a>
                 <ul>
                     <li>

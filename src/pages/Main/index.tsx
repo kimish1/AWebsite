@@ -83,7 +83,7 @@ function Main() {
               <SwiperSlide>
                 <div className="slide-2">
                   <div className="card-reviews">
-                    <h3 className="card__title-reviews">Вова Назар</h3>
+                    <h3 className="card__title-reviews">Женя Окорочок</h3>
                     <p className="card__content-reviews">
                       Советую куплять 1984, бо це моя молодость🤩
                     </p>
@@ -94,7 +94,7 @@ function Main() {
               <SwiperSlide>
                 <div className="slide-3">
                   <div className="card-reviews">
-                    <h3 className="card__title-reviews">Діана Булочка</h3>
+                    <h3 className="card__title-reviews">Ярік Бочок Потік</h3>
                     <p className="card__content-reviews">
                       Я цінитель книжок, тому я не буду куплять у вас, бо у вас
                       странний сайтік😡
@@ -106,7 +106,7 @@ function Main() {
               <SwiperSlide>
                 <div className="slide-4">
                   <div className="card-reviews">
-                    <h3 className="card__title-reviews">Вова циліндр</h3>
+                    <h3 className="card__title-reviews">Толя це під'їзд</h3>
                     <p className="card__content-reviews">Книги...📖</p>
                     <div className="card__date-reviews">April 28, 2008</div>
                   </div>
