@@ -2,7 +2,7 @@ import Header from '../../components/Header/Header.tsx';
 import Footer from '../../components/Footer/Footer.tsx';
 //import Content from "../../components/Content/content.tsx";
 import './style.css';
-
+import { ToastContainer } from 'react-toastify';
 type PageType = {
   children: React.ReactNode;
 };
@@ -10,6 +10,7 @@ type PageType = {
 const Page = (props: PageType) => {
   return (
       <div className="wrapper">
+          <ToastContainer position="top-left"/>
           <Header/>
           <div className="background">
               <video className="ggg" src="../../../public/background.mp4" autoPlay loop muted></video>

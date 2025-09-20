@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Page from "../../layout/page";
 import "../../App.css";
 import "./style.css"
+import {saveToLocalStorage} from "../../localstorage/localStorageHelper.ts";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -28,7 +29,7 @@ function Login() {
 
         if (user) {
             localStorage.setItem("token", "fake-jwt-token");
-            localStorage.setItem("currentUser", user.name);
+            saveToLocalStorage("currentUser", user.name);
             setUserName(user.name);
             setError("");
             setLoggedIn(true);

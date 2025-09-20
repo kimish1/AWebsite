@@ -7,7 +7,7 @@ import "./style.css"
 import Category from "../../components/Categories/Category.tsx";
 import "../../App.css"
 import {useParams} from "react-router";
-
+import {addBookToCart} from "../../localstorage/localStorageHelper.ts";
 
 function OneBook() {
     const { id } = useParams();
@@ -40,14 +40,12 @@ function OneBook() {
                             <p className="book__price">Price: { book.price }$</p>
                             <p className="book__status">Status - { book.status }</p>
 
-                            <a className='book_add_to_cart' href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-                                <button>
+                                <button className='book_add_to_cart' onClick={() => addBookToCart(book.id)}>
                                     Add to cart
                                     <div className="arrow-wrapper">
                                         <div className="arrow"></div>
                                     </div>
                                 </button>
-                            </a>
                         </div>
                         <div className="book__bottom1">
                             <h2>Book Desciption</h2>

@@ -1,5 +1,6 @@
 // @ts-ignore
 import type {Book} from "../../types/types.tsx";
+import {addBookToCart} from "../../localstorage/localStorageHelper.ts";
 
 interface CardBookProps extends Book {
     author: string;
@@ -10,23 +11,24 @@ interface CardBookProps extends Book {
 const CardBook = (props: CardBookProps) => {
     return (
         <div className="card">
-            <a href={"/page-book/" + props.id}>
+
                 <div className="image">
-                    <img src={props.img} alt={props.title}/>
+                    <a href={"/page-book/" + props.id}>
+                        <img src={props.img} alt={props.title}/>
+                    </a>
                 </div>
                 <div className="content">
-                    <div className="title">{props.title}</div>
+                    <a href={"/page-book/" + props.id} className="title">{props.title}</a>
                     <div className="author">{props.author}</div>
                     <div className="price">${props.price}</div>
                 </div>
                 {props.showButton !== false && (
                     <div className="center">
-                        <button type="submit">
+                        <button type="submit" onClick={() => addBookToCart(props.id)}>
                             Add to cart
                         </button>
                     </div>
                 )}
-            </a>
         </div>
     );
 };

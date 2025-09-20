@@ -1,4 +1,6 @@
-import type {Book, Category} from "../types/types.tsx";
+import type {Book, Booking, Category, User} from "../types/types.tsx";
+import books from "../Fixtures/Books.json";
+import { toast } from 'react-toastify';
 
 export function saveToLocalStorage(key: string, value: any): void {
   try {
@@ -37,3 +39,100 @@ export function getBooks(): Book[] | null
   return getFromLocalStorage<Book[]>("books")
 }
 
+export function addBookToCart(bookId: number): void {
+
+  const curentUser:User = getFromLocalStorage("currentUser");
+
+  if(!curentUser)
+    return;
+
+  const carts = getFromLocalStorage<Booking[]>("carts", []) || [];
+
+  let booking = carts?.find(b => b.userId === curentUser.id);
+  if(!booking) {
+    booking = {
+      id: carts.length ? carts[carts.length - 1].id + 1 : 1,
+      userId: curentUser.id,
+      booksId: [{bookId, quantity: 1}],
+      bookingDate: new Date().toISOString(),
+      totalPrice: 0
+    };
+    carts.push(booking);
+  } else {
+    let index = carts.findIndex(b => b.userId === curentUser.id);
+
+    if(!carts[index].booksId.find(b => b.bookId === bookId)) {
+      carts[index].booksId.push({bookId, quantity: 1});
+    }
+    else {
+      carts[index].booksId.forEach(b => {
+        if(b.bookId === bookId) {
+          b.quantity += 1;
+        }
+      });
+    }
+  }
+
+  saveToLocalStorage("carts", carts);
+  emitCartChange();
+  toast("Книжку додано!")
+}
+
+export function getBooksWithCart(): Book[] | null {
+  const curentUser:User = getFromLocalStorage("currentUser");
+
+  if(!curentUser) return [];
+
+  const carts = getFromLocalStorage<Booking[]>("carts", []) || [];
+  const booking = carts?.find(b => b.userId === curentUser.id);
+
+  if(!booking) return [];
+
+  if(!books) return [];
+
+  const data = books.filter(b => booking.booksId.some(bc => bc.bookId === b.id));
+
+  const newData = data.map(book => ({
+    ...book,
+    quantity: booking.booksId.find(bc => bc.bookId === book.id)?.quantity
+  }));
+
+  return newData
+}
+
+export function clearCart(): void {
+  const curentUser:User = getFromLocalStorage("currentUser");
+
+  if(!curentUser) return;
+
+  let carts = getFromLocalStorage<Booking[]>("carts", []) || [];
+  carts = carts?.filter(b => b.userId !== curentUser.id);
+
+  saveToLocalStorage("carts", carts);
+  emitCartChange();
+}
+
+export function removeBook(book_id):void {
+  const curentUser:User = getFromLocalStorage("currentUser");
+
+  if(!curentUser) return;
+
+  let carts = getFromLocalStorage<Booking[]>("carts", []) || [];
+  console.log(carts);
+
+  if (carts) {
+    const userIndex = carts.findIndex(b => b.userId === curentUser.id);
+
+    if (userIndex !== -1) {
+      carts[userIndex].booksId = carts[userIndex].booksId.filter(bc => bc.bookId !== book_id);
+    }
+  }
+
+  saveToLocalStorage("carts", carts);
+  emitCartChange();
+  toast("Книжку видалено!")
+}
+
+export const emitCartChange = () => {
+  window.dispatchEvent(new Event('cartChange'));
+};

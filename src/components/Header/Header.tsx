@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import Cart from "../Cart/Cart.tsx";
 import "./style.css";
 
 const Header = () => {
@@ -59,14 +59,6 @@ const Header = () => {
                                     </div>
                                 </button>
                             </li>
-                            {/* Корзина-эмодзи */}
-                            <li
-                                className="cart-emoji"
-                                onClick={() => setIsCartOpen(true)}
-                                style={{ cursor: "pointer" }}
-                            >
-                                🧺
-                            </li>
                         </>
                     ) : (
                         <>
@@ -78,41 +70,18 @@ const Header = () => {
                             </li>
                         </>
                     )}
+
+                    <li
+                        className="cart-emoji"
+                        onClick={() => setIsCartOpen(true)}
+                        style={{ cursor: "pointer" }}
+                    >
+                        🧺
+                    </li>
                 </ul>
             </div>
 
-            <AnimatePresence>
-                {isCartOpen && (
-                    <motion.div
-                        className="modal-overlay"
-                        onClick={() => setIsCartOpen(false)}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        <motion.div
-                            className="modal-content"
-                            onClick={(e) => e.stopPropagation()}
-                            initial={{ y: "-100vh", opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: "-100vh", opacity: 0 }}
-                            transition={{ type: "spring", stiffness: 80, damping: 15 }}
-                        >
-                            <button
-                                className="modal-close"
-                                onClick={() => setIsCartOpen(false)}
-                            >
-                                ✖
-                            </button>
-                            <h2>Кошик</h2>
-                            <h3>🧺</h3>
-                            <p>Ваш кошик порожній :(</p>
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-
+            <Cart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen}></Cart>
         </div>
     );
 };

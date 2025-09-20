@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Page from "../../layout/page";
 import "../../App.css";
+import {saveToLocalStorage} from "../../localstorage/localStorageHelper.ts";
 
 function Register() {
     const [name, setName] = useState("");
@@ -38,7 +39,7 @@ function Register() {
 
         localStorage.setItem("users", JSON.stringify(users));
         localStorage.setItem("token", "fake-jwt-token");
-        localStorage.setItem("currentUser", name);
+        saveToLocalStorage("currentUser", name);
 
         setError("");
         setSuccess(`User ${name} successfully registered! Redirecting...`);
