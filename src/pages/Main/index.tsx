@@ -106,7 +106,7 @@ function Main() {
               <SwiperSlide>
                 <div className="slide-4">
                   <div className="card-reviews">
-                    <h3 className="card__title-reviews">Толя це під'їзд</h3>
+                    <h3 className="card__title-reviews">Толя це Під'їзд</h3>
                     <p className="card__content-reviews">Книги...📖</p>
                     <div className="card__date-reviews">April 28, 2008</div>
                   </div>
@@ -124,7 +124,7 @@ function Main() {
               <SwiperSlide>
                 <div className="slide-6">
                   <div className="card-reviews">
-                    <h3 className="card__title-reviews">Ігоrrr</h3>
+                    <h3 className="card__title-reviews">Ігарьок</h3>
                     <p className="card__content-reviews">
                       Я люблю читати книги, але у вас якийсь малий асортимент😏
                     </p>

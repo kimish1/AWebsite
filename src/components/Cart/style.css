@@ -51,9 +51,10 @@
 
 .clearCart {
     text-align: right;
-    color: red;
+    color: #d95308;
     display: block;
     margin-bottom: 12px;
+    font-family: "Segoe UI Black", sans-serif;
 }
 
 .cart-bottom {
