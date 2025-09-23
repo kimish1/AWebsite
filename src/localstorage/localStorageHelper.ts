@@ -75,7 +75,7 @@ export function addBookToCart(bookId: number): void {
 
   saveToLocalStorage("carts", carts);
   emitCartChange();
-  toast("Книжку додано!")
+  toast("Книжку додано в кошик!")
 }
 
 export function getBooksWithCart(): Book[] | null {
@@ -130,7 +130,7 @@ export function removeBook(book_id):void {
 
   saveToLocalStorage("carts", carts);
   emitCartChange();
-  toast("Книжку видалено!")
+  toast("Книжку видалено з кошика!")
 }
 
 export const emitCartChange = () => {
