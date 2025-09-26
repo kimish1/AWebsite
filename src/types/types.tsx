@@ -1,3 +1,5 @@
+import * as React from "react";
+
 export type User = {
     id: number;
     name: string;
@@ -6,12 +8,12 @@ export type User = {
     comments: Comment[]
 }
 
-export type Category = {
+export type CategoryType = {
     id: number;
     name: string;
     createdAt: string;
     updatedAt: string;
-    onChange: Function;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export type Booking = {
@@ -28,10 +30,9 @@ export type ProductInCart = {
 }
 
 
-interface ENUM {
-}
 
 export type Book = {
+    quantity: number;
     id: number;
     image: string;
     categoryId: number;
@@ -42,7 +43,6 @@ export type Book = {
     price: number;
     discountPrice: number;
     pageCount: number;
-    status: ENUM
     createdAt: string;
     updatedAt: string;
 }

@@ -41,12 +41,12 @@ export function getBooks(): Book[] | null
 
 export function addBookToCart(bookId: number): void {
 
-  const curentUser:User = getFromLocalStorage("currentUser");
+  const curentUser:User | null = getFromLocalStorage("currentUser");
 
   if(!curentUser)
     return;
 
-  const carts = getFromLocalStorage<Booking[]>("carts", []) || [];
+  const carts = getFromLocalStorage<Booking[]>("carts") || [];
 
   let booking = carts?.find(b => b.userId === curentUser.id);
   if(!booking) {
@@ -79,11 +79,11 @@ export function addBookToCart(bookId: number): void {
 }
 
 export function getBooksWithCart(): Book[] | null {
-  const curentUser:User = getFromLocalStorage("currentUser");
+  const curentUser:User | null = getFromLocalStorage("currentUser");
 
   if(!curentUser) return [];
 
-  const carts = getFromLocalStorage<Booking[]>("carts", []) || [];
+  const carts = getFromLocalStorage<Booking[]>("carts") || [];
   const booking = carts?.find(b => b.userId === curentUser.id);
 
   if(!booking) return [];
@@ -94,30 +94,30 @@ export function getBooksWithCart(): Book[] | null {
 
   const newData = data.map(book => ({
     ...book,
-    quantity: booking.booksId.find(bc => bc.bookId === book.id)?.quantity
+    quantity: booking.booksId.find(bc => bc.bookId === book.id)?.quantity ?? 0,
   }));
 
-  return newData
+  return newData;
 }
 
 export function clearCart(): void {
-  const curentUser:User = getFromLocalStorage("currentUser");
+  const curentUser:User | null = getFromLocalStorage("currentUser");
 
   if(!curentUser) return;
 
-  let carts = getFromLocalStorage<Booking[]>("carts", []) || [];
+  let carts = getFromLocalStorage<Booking[]>("carts") || [];
   carts = carts?.filter(b => b.userId !== curentUser.id);
 
   saveToLocalStorage("carts", carts);
   emitCartChange();
 }
 
-export function removeBook(book_id):void {
-  const curentUser:User = getFromLocalStorage("currentUser");
+export function removeBook(book_id: number):void {
+  const curentUser:User | null = getFromLocalStorage("currentUser");
 
   if(!curentUser) return;
 
-  let carts = getFromLocalStorage<Booking[]>("carts", []) || [];
+  let carts = getFromLocalStorage<Booking[]>("carts") || [];
   console.log(carts);
 
   if (carts) {

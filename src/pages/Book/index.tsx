@@ -3,15 +3,13 @@ import books from "../../Fixtures/Books.json";
 import authors from "../../Fixtures/Authors.json";
 import Book from "../../components/Book/Book.tsx";
 import "./style.css"
-// @ts-ignore
-import Category from "../../components/Categories/Category.tsx";
 import "../../App.css"
 import {useParams} from "react-router";
 import {addBookToCart} from "../../localstorage/localStorageHelper.ts";
 
 function OneBook() {
     const { id } = useParams();
-    const bookId = parseInt(id, 10);
+    const bookId = parseInt(id as string, 10);
 
     const book = books.find((b) => b.id === bookId);
     const author = authors.find((a) => a.id === book?.authorId);
@@ -59,7 +57,8 @@ function OneBook() {
 
                 <div className="popular-books">
                     {randomBooks.map((book) => {
-                        const author = authors.find((author) => author.id === book.authorId);
+                        const author = authors.find(a => a.id === book.authorId);
+
                         return (
                             <Book
                                 key={book.id}
@@ -67,11 +66,15 @@ function OneBook() {
                                 title={book.title}
                                 price={book.price}
                                 img={book.image}
-                                // @ts-ignore
-                                author={author?.name}
+                                author={author?.name ?? "Невідомий автор"}
                                 showButton={book.image !== "https://placehold.co/430x640"}
+                                quantity={0}
+                                categoryId={0}
+                                authorId={book.authorId} image={''} shortDescription={''} description={''}
+                                discountPrice={0} pageCount={0}createdAt={''} updatedAt={''}
                             />
-                        )
+
+                        );
                     })}
                 </div>
             </Page>

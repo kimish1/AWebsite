@@ -5,16 +5,9 @@ import './style.css';
 import Book from '../../components/Book/Book.tsx';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-// @ts-ignore
-import 'swiper/css';
-// @ts-ignore
-import 'swiper/css/navigation';
-// @ts-ignore
-import 'swiper/css/pagination';
 
 function Main() {
-  // @ts-ignore
-  const otherBooks = books.filter((b) => b.id !== Book);
+  const otherBooks = books.filter((b) => b.id);
   const shuffled = [...otherBooks].sort(() => Math.random() - 0.5);
   const randomBooks = shuffled.slice(0, 8);
   return (
@@ -39,17 +32,20 @@ function Main() {
               (author) => author.id === book.authorId
             );
 
-            // @ts-ignore
             return (
-              <Book
-                key={book.id}
-                id={book.id}
-                title={book.title}
-                price={book.price}
-                img={book.image}
-                author={author?.name}
-                showButton={false}
-              />
+                <Book
+                    key={book.id}
+                    id={book.id}
+                    title={book.title}
+                    price={book.price}
+                    img={book.image}
+                    author={author?.name ?? "Невідомий автор"}
+                    showButton={book.image !== "https://placehold.co/430x640"}
+                    quantity={0}
+                    categoryId={0}
+                    authorId={book.authorId} image={''} shortDescription={''} description={''}
+                    discountPrice={0} pageCount={0} createdAt={''} updatedAt={''}
+                />
             );
           })}
         </div>

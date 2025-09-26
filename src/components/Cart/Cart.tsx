@@ -1,26 +1,28 @@
-import {AnimatePresence, motion, removeItem} from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 import {useState, useEffect, useMemo} from "react";
 import {clearCart, getBooksWithCart, removeBook} from "../../localstorage/localStorageHelper.ts";
 import './style.css';
+import type {Book} from "../../types/types.tsx";
 
 const Cart = ({isCartOpen, setIsCartOpen}:any) => {
 
-    const [books, setBooks] = useState([]);
+    const [books, setBooks] = useState<Book[]>([]);
 
     useEffect(() => {
         const data = getBooksWithCart();
-        setBooks(data);
+        if(data)
+            setBooks(data);
 
         window.addEventListener('cartChange', handler);
     }, []);
 
     const handler = () => {
-        const data = getBooksWithCart();
+        const data = getBooksWithCart() as Book[];
         setBooks(data);
     };
 
     const total = useMemo(() => {
-        const sum = books.reduce((acc, book) => acc + book.price * book.quantity, 0);
+        const sum = books.reduce((acc, book) => acc + book.price * (book.quantity ?? 0), 0);
         return sum.toFixed(2);
     }, [books]);
 

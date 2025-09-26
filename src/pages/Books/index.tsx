@@ -4,7 +4,6 @@ import authors from "../../Fixtures/Authors.json";
 import categori from "../../Fixtures/Categories.json";
 import Book from "../../components/Book/Book.tsx";
 import "./style.css"
-// @ts-ignore
 import Category from "../../components/Categories/Category.tsx";
 import {useState} from "react";
 
@@ -46,7 +45,7 @@ function Books() {
                                 name={category.name}
                                 createdAt={category.createdAt}
                                 updatedAt={category.updatedAt}
-                                onChange={(e) => handleChange(e.target.checked, category.id)}
+                                onChange={(e: { target: { checked: boolean; }; }) => handleChange(e.target.checked, category.id)}
                             />
                         )
                     })}
@@ -62,11 +61,14 @@ function Books() {
                                 title={book.title}
                                 price={book.price}
                                 img={book.image}
-                                author={author?.name}
+                                author={author?.name ?? "Невідомий автор"}
+                                quantity={0}
+                                categoryId={0}
+                                authorId={book.authorId} image={''} shortDescription={''} description={''}
+                                discountPrice={0} pageCount={0}createdAt={''} updatedAt={''}
                             />
                         )
                     })}
-
                 </div>
             </Page>
         </div>

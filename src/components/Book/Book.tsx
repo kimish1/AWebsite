@@ -1,4 +1,3 @@
-// @ts-ignore
 import type {Book} from "../../types/types.tsx";
 import {addBookToCart} from "../../localstorage/localStorageHelper.ts";
 

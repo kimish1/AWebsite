@@ -1,10 +1,9 @@
-import type {Category} from "../../types/types.tsx"
+import type {CategoryType} from "../../types/types.tsx"
 
-const Category = (props:Category) =>{
-    // @ts-ignore
+const Category = (props:CategoryType) =>{
     return (
         <div className="checkbox-wrapper-4">
-            <input className="inp-cbx" id={props.name} value={props.id} type="checkbox" onChange={props.onChange}/>
+            <input className="inp-cbx" id={props.name} value={props.id} type="checkbox" onChange={(e) => props.onChange(e)}/>
             <label className="cbx" htmlFor={props.name}><span>
                             <svg width="12px" height="10px">
 
