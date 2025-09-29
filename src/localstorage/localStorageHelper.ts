@@ -1,4 +1,4 @@
-import type {Book, Booking, Category, User} from "../types/types.tsx";
+import type {Book, Booking, CategoryType, User} from "../types/types.tsx";
 import books from "../Fixtures/Books.json";
 import { toast } from 'react-toastify';
 
@@ -29,9 +29,54 @@ export function removeFromLocalStorage(key: string): void {
     console.error("Error removing from localStorage", error);
   }
 }
-export function getCategories(): Category[] | null
+export function increaseQuantity(bookId: number): void {
+  const curentUser: User | null = getFromLocalStorage("currentUser");
+  if (!curentUser) return;
+
+  const carts = getFromLocalStorage<Booking[]>("carts") || [];
+  const booking = carts.find(b => b.userId === curentUser.id);
+
+  if (booking) {
+    booking.booksId.forEach(b => {
+      if (b.bookId === bookId) {
+        b.quantity += 1;
+      }
+    });
+  }
+
+  saveToLocalStorage("carts", carts);
+  emitCartChange();
+}
+
+export function decreaseQuantity(bookId: number): void {
+  const curentUser: User | null = getFromLocalStorage("currentUser");
+  if (!curentUser) return;
+
+  let carts = getFromLocalStorage<Booking[]>("carts") || [];
+  const bookingIndex = carts.findIndex(b => b.userId === curentUser.id);
+
+  if (bookingIndex !== -1) {
+    let books = carts[bookingIndex].booksId;
+
+    const bookIndex = books.findIndex(b => b.bookId === bookId);
+    if (bookIndex !== -1) {
+      if (books[bookIndex].quantity > 1) {
+        books[bookIndex].quantity -= 1;
+      } else {
+        books.splice(bookIndex, 1);
+        toast("Книжку видалено з кошика!");
+      }
+    }
+  }
+
+  saveToLocalStorage("carts", carts);
+  emitCartChange();
+}
+
+
+export function getCategories(): CategoryType[] | null
 {
-  return getFromLocalStorage<Category[]>("categories") 
+  return getFromLocalStorage<CategoryType[]>("categories")
 }
 
 export function getBooks(): Book[] | null
@@ -77,6 +122,7 @@ export function addBookToCart(bookId: number): void {
   emitCartChange();
   toast("Книжку додано в кошик!")
 }
+
 
 export function getBooksWithCart(): Book[] | null {
   const curentUser:User | null = getFromLocalStorage("currentUser");

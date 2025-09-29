@@ -1,8 +1,9 @@
 import {AnimatePresence, motion} from "framer-motion";
 import {useState, useEffect, useMemo} from "react";
-import {clearCart, getBooksWithCart, removeBook} from "../../localstorage/localStorageHelper.ts";
 import './style.css';
 import type {Book} from "../../types/types.tsx";
+import { clearCart, getBooksWithCart, removeBook, increaseQuantity, decreaseQuantity } from "../../localstorage/localStorageHelper.ts";
+
 
 const Cart = ({isCartOpen, setIsCartOpen}:any) => {
 
@@ -74,8 +75,19 @@ const Cart = ({isCartOpen, setIsCartOpen}:any) => {
 
                                                 <a className="header-cart__name" href={"/page-book/" + book.id}>{book.title}</a>
                                                 <div className="header-cart__quantity">
-                                                    {book.quantity}
+                                                    <button
+                                                        className="quantity-btn"
+                                                        onClick={() => decreaseQuantity(book.id)}
+                                                    >-</button>
+
+                                                    <span>{book.quantity}</span>
+
+                                                    <button
+                                                        className="quantity-btn"
+                                                        onClick={() => increaseQuantity(book.id)}
+                                                    >+</button>
                                                 </div>
+
                                                 <div className="header-cart__price hidden-xs">
                                                     <div className="header-cart__price-text">Ціна за шт</div>
                                                     {book.price}$
