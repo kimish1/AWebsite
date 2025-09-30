@@ -13,11 +13,11 @@ const Page = (props: PageType) => {
           <ToastContainer position="top-left"/>
           <Header/>
           <div className="background">
-              <video className="ggg" src="../../../public/background.mp4" autoPlay loop muted></video>
+              <video className="tooman-video" src="../../../public/background.mp4" autoPlay loop muted></video>
               <div className="sloy"></div>
           </div>
           <div className="background1">
-              <video className="ggg1" src="../../../public/background.mp4" autoPlay loop muted></video>
+              <video className="tooman-video1" src="../../../public/background.mp4" autoPlay loop muted></video>
               <div className="sloy1"></div>
           </div>
           <div className="container">
